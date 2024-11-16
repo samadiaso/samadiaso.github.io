@@ -10,21 +10,21 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar">
+ <nav class="navbar">
     <div class="logo">
         <img src="images/logo.png" alt="Logo" class="logo-image">
     </div>
     <div class="nav-links">
         <a href="#" class="about-link">About Me</a>
         <div class="dropdown">
-            <button class="dropbtn">Services</button>
-            <div class="dropdown-content">
+            <button class="dropbtn" id="services-button">Services</button>
+            <div class="dropdown-content" id="dropdown-menu">
                 <a href="#service1">Frame Craft</a>
                 <a href="#service2">Gift Craft</a>
             </div>
         </div>
     </div>
-    </nav>
+</nav>
 
 
     <!-- Services Section -->
@@ -37,7 +37,8 @@
             <div class="service-right">
                 <h2>Handcrafted Frames</h2>
                 <p>
-                    I’ve dedicated years to the art of handcrafting frames that bring your cherished moments to life. Each frame I create is lovingly handmade, ensuring that your artwork receives the perfect touch of elegance and warmth. I invite you to bring your treasured memories to our shop. Every piece you entrust to me will be handled with care.
+                    I’ve dedicated years to the art of handcrafting frames that bring your cherished moments to life. Each frame I create is lovingly handmade, ensuring that your artwork receives the perfect touch of elegance and warmth. In a world filled with mass-produced items, there’s something truly special about giving or receiving a handcrafted frame—it’s a gift that holds a piece of my heart and hands in every corner.
+                I invite you to bring your treasured memories, photos, or special artwork to our shop. Every piece you entrust to me will be handled with the utmost care, as if it were my own. Let’s create something beautiful together.
                 </p>
                 <a href="mailto:your-email@example.com" class="contact-button">Contact Me</a>
             </div>
@@ -58,6 +59,7 @@
         </div>
     </div>
 
+    <script src="script.js"></script>
     <!-- JavaScript for Smooth Scrolling -->
     <script>
         document.querySelectorAll('.dropdown-content a').forEach(anchor => {

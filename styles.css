@@ -8,7 +8,7 @@
     font-family: 'Architects Daughter', cursive;
 }
 
-/* Body styling */
+/* Body Styling */
 body {
     background-color: #F6E7D8;
     display: flex;
@@ -17,9 +17,10 @@ body {
     justify-content: flex-start;
     height: 100vh;
     width: 100%;
+    overflow-x: hidden;
 }
 
-/* Navigation Bar */
+/* Navbar Styling */
 .navbar {
     width: 100%;
     padding: 10px 20px;
@@ -33,11 +34,11 @@ body {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 30px; /* Space between nav items */
+    gap: 30px;
 }
 
 .about-link {
-    margin-right: auto; /* Push "About Me" to the left */
+    margin-right: auto;
     text-decoration: none;
     font-size: 18px;
     color: black;
@@ -47,17 +48,24 @@ body {
     height: 50px;
 }
 
-/* Dropdown menu for Services */
+/* Dropdown Menu Styling */
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
 .dropbtn {
-    background-color: #F6E7D8;
+    background-color: transparent;
     border: none;
     cursor: pointer;
     font-size: 18px;
+    color: black;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.dropbtn:hover {
+    color: #007bff;
 }
 
 .dropdown-content {
@@ -65,20 +73,25 @@ body {
     position: absolute;
     background-color: #F6E7D8;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
     z-index: 1;
     right: 0;
+    padding: 10px;
 }
 
 .dropdown-content a {
     color: black;
-    padding: 10px;
+    padding: 8px 10px;
     text-decoration: none;
     display: block;
     white-space: nowrap;
+    border-radius: 5px;
+    margin: 5px 0;
 }
 
 .dropdown-content a:hover {
     background-color: #ddd;
+    color: #007bff;
 }
 
 .dropdown:hover .dropdown-content {
@@ -103,7 +116,7 @@ body {
     width: 100vw;
     flex-shrink: 0;
     scroll-snap-align: start;
-    height: calc(100vh - 120px); /* Adjusted for navbar height */
+    height: calc(100vh - 120px);
     background-color: #F6E7D8;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -112,6 +125,9 @@ body {
 
 .service-left {
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .service-image {
@@ -126,6 +142,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow-y: auto;
+    height: 100%;
 }
 
 .service-right h2 {
@@ -146,25 +164,48 @@ body {
     text-align: center;
     transition: background-color 0.3s ease;
     width: fit-content;
+    margin-top: auto;
 }
 
 .contact-button:hover {
     background-color: #333;
 }
 
-/* Responsive Design */
+/* Fix for smaller screens */
 @media (max-width: 768px) {
     .service-card {
         flex-direction: column;
         height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
     }
 
     .service-right {
         padding: 20px;
     }
+}
 
-    .dropdown-content {
-        right: auto;
-        left: 0;
+/* Adjustments for landscape mode on iPhones and iPads */
+@media (max-height: 600px) and (orientation: landscape) {
+    .service-card {
+        flex-direction: row;
+        height: 100%;
+        align-items: center;
+    }
+
+    .service-left {
+        flex: 1;
+    }
+
+    .service-right {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+    }
+
+    .service-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
