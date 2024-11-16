@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samadi Aso</title>
+    <title>Handcrafted Services</title>
     <!-- Google Fonts Import -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap">
     <link rel="stylesheet" href="styles.css">
@@ -11,29 +11,63 @@
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="logo">
-            <img src="images/logo.png" alt="Logo" class="logo-image">
-        </div>
-        <div class="nav-links">
-            <a href="#">About Me</a>
-        </div>
-    </nav>
-
-    <!-- Main Content Section -->
-    <div class="content">
-        <!-- Left Section: Image -->
-        <div class="left-section">
-            <img src="images/frame-sample.avif" alt="Frame Sample" class="full-image">
-        </div>
-        <!-- Right Section: Paragraph -->
-        <div class="right-section">
-            <p>
-                I’ve dedicated years to the art of handcrafting frames that bring your cherished moments to life. Each frame I create is lovingly handmade, ensuring that your artwork receives the perfect touch of elegance and warmth. In a world filled with mass-produced items, there’s something truly special about giving or receiving a handcrafted frame—it’s a gift that holds a piece of my heart and hands in every corner.
-
-                I invite you to bring your treasured memories, photos, or special artwork to our shop. Every piece you entrust to me will be handled with the utmost care, as if it were my own. Let’s create something beautiful together.
-            </p>
-            <a href="mailto:samadiaso@gmail.com" class="contact-button">Contact Me</a>
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo" class="logo-image">
+    </div>
+    <div class="nav-links">
+        <a href="#" class="about-link">About Me</a>
+        <div class="dropdown">
+            <button class="dropbtn">Services</button>
+            <div class="dropdown-content">
+                <a href="#service1">Frame Craft</a>
+                <a href="#service2">Gift Craft</a>
+            </div>
         </div>
     </div>
+    </nav>
+
+
+    <!-- Services Section -->
+    <div class="services-container">
+        <!-- Service 1: Framing -->
+        <div class="service-card" id="service1">
+            <div class="service-left">
+                <img src="images/frame-sample.avif" alt="Framing Service" class="service-image">
+            </div>
+            <div class="service-right">
+                <h2>Handcrafted Frames</h2>
+                <p>
+                    I’ve dedicated years to the art of handcrafting frames that bring your cherished moments to life. Each frame I create is lovingly handmade, ensuring that your artwork receives the perfect touch of elegance and warmth. I invite you to bring your treasured memories to our shop. Every piece you entrust to me will be handled with care.
+                </p>
+                <a href="mailto:your-email@example.com" class="contact-button">Contact Me</a>
+            </div>
+        </div>
+
+        <!-- Service 2: Personalized Gifts -->
+        <div class="service-card" id="service2">
+            <div class="service-left">
+                <img src="images/gift-craft.jpg" alt="Personalized Gifts" class="service-image">
+            </div>
+            <div class="service-right">
+                <h2>Personalized Gifts</h2>
+                <p>
+                    Looking for a unique and thoughtful gift? I specialize in creating personalized gifts that carry a special touch. Whether it’s a custom photo frame or a handcrafted keepsake, each piece is made with love and care to make your gift truly one of a kind.
+                </p>
+                <a href="mailto:your-email@example.com" class="contact-button">Contact Me</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Smooth Scrolling -->
+    <script>
+        document.querySelectorAll('.dropdown-content a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            });
+        });
+    </script>
 </body>
 </html>

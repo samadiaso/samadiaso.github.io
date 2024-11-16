@@ -1,6 +1,6 @@
-/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 
+/* Reset styles */
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +8,7 @@
     font-family: 'Architects Daughter', cursive;
 }
 
+/* Body styling */
 body {
     background-color: #F6E7D8;
     display: flex;
@@ -18,6 +19,7 @@ body {
     width: 100%;
 }
 
+/* Navigation Bar */
 .navbar {
     width: 100%;
     padding: 10px 20px;
@@ -25,62 +27,125 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #F6E7D8;
+    border-bottom: 1px solid #e0d5c1;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Space between nav items */
+}
+
+.about-link {
+    margin-right: auto; /* Push "About Me" to the left */
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
 }
 
 .logo-image {
     height: 50px;
 }
 
-.nav-links a {
-    color: black;
-    text-decoration: none;
+/* Dropdown menu for Services */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #F6E7D8;
+    border: none;
+    cursor: pointer;
     font-size: 18px;
-    margin-left: 20px;
 }
 
-.content {
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #F6E7D8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Services Container */
+.services-container {
     display: flex;
-    flex-wrap: wrap;
-    margin: 20px;
-    width: 90%;
-    max-width: 1200px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     gap: 20px;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
 }
 
-.left-section, .right-section {
+/* Service Cards */
+.service-card {
+    display: flex;
+    width: 100vw;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    height: calc(100vh - 120px); /* Adjusted for navbar height */
+    background-color: #F6E7D8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.service-left {
     flex: 1;
-    height: auto;
 }
 
-.full-image {
+.service-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px;
 }
 
-.right-section {
+.service-right {
+    flex: 1;
+    padding: 40px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
-    padding: 20px;
-    background-color: #F6E7D8;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.service-right h2 {
+    margin-bottom: 20px;
+}
+
+.service-right p {
     font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .contact-button {
-    display: inline-block;
-    margin-top: 20px;
     padding: 10px 20px;
     background-color: black;
     color: #F6E7D8;
     text-decoration: none;
     border-radius: 5px;
-    font-family: 'Architects Daughter', cursive;
+    text-align: center;
     transition: background-color 0.3s ease;
+    width: fit-content;
 }
 
 .contact-button:hover {
@@ -89,15 +154,17 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .content {
+    .service-card {
         flex-direction: column;
-    }
-
-    .left-section, .right-section {
         height: auto;
     }
 
-    .right-section {
-        padding: 10px;
+    .service-right {
+        padding: 20px;
+    }
+
+    .dropdown-content {
+        right: auto;
+        left: 0;
     }
 }
